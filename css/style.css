@@ -1,9 +1,7 @@
 .header {
-  text-align: center;
+  line-height: 200px;
   height: 200px;
-  margin: 0 auto;
-  border: 2px dashed red;
-  background-color: #fefefe;
+  margin: 0;
 }
 
 .container {
@@ -11,7 +9,6 @@
     margin: 0 auto;
     padding: 20px;
     border: 2px dashed rgb(67, 92, 219); 
-    background-color: #f9f9f9; 
 }
 
 .tab-buttons {
