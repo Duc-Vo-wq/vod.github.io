@@ -13,6 +13,14 @@
   font-weight: bold;
 }
 
+.float-left-img {
+  float: left;
+  width: 200px;       /* set your image width */
+  height: auto;       /* keeps aspect ratio */
+  margin: 0 16px 16px 0; /* right + bottom spacing */
+}
+
+
 .tab-buttons {
   display: flex;
   gap: 10px;
@@ -39,49 +47,3 @@
 .tab-content.active {
   display: block;
 }
-
-/* Main content on tabs */
-.main {
-  position: relative;
-  margin-top: 10px;
-}
-
-.pane {
-  display: flex;
-  gap: 10px;
-}
-
-.hidden {
-  display: none;
-}
-
-.image {
-  flex: 0 0 300px;
-  height: 200px;
-  background-color: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 18px;
-}
-
-.texts {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 10px;
-}
-
-.text-placeholder {
-  flex: 1;
-  background-color: #eee;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
-  font-size: 18px;
-}
-
-
