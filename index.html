@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="container">
-        <header>
-        <h1>My Portfolio</h1>
-        </header>
-  <nav>
+  <div class="container">
+    <header>
+    <h1>My Portfolio</h1>
+    </header>
+    <nav>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -20,28 +20,34 @@
       </ul>
     </nav>
 
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>This is a brief introduction to who I am and what I do.</p>
-    </section>
+    <div class="tabs">
+      <div class="tab-buttons">
+        <button data-tab="about">About</button>
+        <button data-tab="projects">Projects</button>
+        <button data-tab="contact">Contact</button>
+      </div>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <p>Here are some cool things I've built.</p>
-    </section>
+      <div class="tab-content" id="about">
+        <h2>About Me</h2>
+        <p>This is a brief introduction to who I am and what I do.</p>
+      </div>
 
-    <section id="contact">
+      <div class="tab-content" id="projects">
+        <h2>Projects</h2>
+        <p>Here are some cool things I've built.</p>
+      </div>
+
+      <div class="tab-content" id="contact">
       <h2>Contact</h2>
       <p>Feel free to reach out via email or social media.</p>
-    </section>
-  </main>
+      </div>
+    </div>
 
-  <footer>
-    <p>&copy; 2025 My Portfolio. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+    </footer>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
   </div>
 </body>
 </html>
