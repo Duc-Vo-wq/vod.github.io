@@ -18,7 +18,6 @@ buttons[0].click();
 
 // *** Fade transition on tab switch
 //Start
-
 // helper: show only one pane with fade
 function showTab(id) {
   contents.forEach(c => {
