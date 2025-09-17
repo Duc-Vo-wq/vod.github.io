@@ -1,6 +1,7 @@
 .header {
   height: 200px;
   margin: 0 auto;
+  border: 2px dashed red;
   background-color: #fefefe;
 }
 
@@ -8,7 +9,7 @@
     width: 900px;
     margin: 0 auto;
     padding: 20px;
-    border: 2px dashed red; 
+    border: 2px dashed rgb(67, 92, 219); 
     background-color: #f9f9f9; 
 }
 
