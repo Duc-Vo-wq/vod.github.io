@@ -13,6 +13,6 @@ buttons.forEach(button => {
   });
 });
 
-// Optionally activate the first tab by default
+// First tab by default
 buttons[0].click();
 
