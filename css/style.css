@@ -42,14 +42,10 @@
 
 .tab-content {
   display: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-
 }
 
 .tab-content.active {
   display: block;
-  opacity: 1;
 }
 
 /* Dark/Light Mode */
