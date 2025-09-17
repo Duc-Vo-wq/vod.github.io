@@ -18,8 +18,6 @@ buttons[0].click();
 
 // *** Fade transition on tab switch
 //Start
-const buttons = document.querySelectorAll('.tab-buttons button');
-const contents = document.querySelectorAll('.tab-content');
 
 // helper: show only one pane with fade
 function showTab(id) {
