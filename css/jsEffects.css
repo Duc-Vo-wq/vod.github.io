@@ -41,26 +41,19 @@ body {
   transition: width 0.2s ease;
 }
 
-/*Typewriter effect*/
-#typewriter {
-  font-family: monospace;
-  white-space: nowrap;
+/* Particle Systems */
+html, body {
+  margin: 0;
+  padding: 0;
   overflow: hidden;
-  border-right: .15em solid orange;
-  display: inline-block;
-  animation: blinkCaret .75s step-end infinite;
 }
 
-@keyframes blinkCaret {
-  from, to { border-color: transparent; }
-  50% { border-color: orange; }
+#canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
 }
 
-#startBtn {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-}
 
 
