@@ -53,18 +53,4 @@
   display: block;
 }
 
-/* Dark/Light Mode */
-:root {
-  --bg: #fff;
-  --fg: #111;
-}
-[data-theme="dark"] {
-  --bg: #111;
-  --fg: #eee;
-}
 
-body {
-  background: var(--bg);
-  color: var(--fg);
-  transition: background 0.3s, color 0.3s;
-}
