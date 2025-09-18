@@ -74,27 +74,42 @@ function startProgress() {
 
 startBtn.addEventListener('click', startProgress);
 
-// Animated Gradients
-const gradient = document.getElementById('gradient');
-let hue = 0;
 
-function animateGradient() {
-  // Compute two hues 60° apart
-  const color1 = `hsl(${hue}, 100%, 50%)`;
-  const color2 = `hsl(${(hue + 60) % 360}, 100%, 50%)`;
-  
-  // Apply as a 45° linear gradient
-  gradient.style.background = `linear-gradient(45deg, ${color1}, ${color2})`;
-  
-  // Increment hue, wrap at 360
-  hue = (hue + 1) % 360;
-  
-  // Loop on next animation frame for smooth 60fps
-  requestAnimationFrame(animateGradient);
+const Letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_=+<>/[]{}()!?';
+const element     = document.getElementById('decoder');
+const btn    = document.getElementById('startBtn');
+
+function startDecoding(finalText) {
+  const len      = finalText.length;
+  const revealTs = Array.from({length: len}, () => 
+    Math.random() * 1500 + 500  // each letter reveals between 500ms and 2000ms
+  );
+  const start    = performance.now();
+
+  function update(now) {
+    const t   = now - start;
+    const out = finalText.split('').map((ch, i) => {
+      return t > revealTs[i]
+        ? ch
+        : Letters[Math.floor(Math.random() * Letters.length)];
+    }).join('');
+
+    element.textContent = out;
+
+    if (t < Math.max(...revealTs)) {
+      requestAnimationFrame(update);
+    }
+  }
+
+  requestAnimationFrame(update);
 }
 
-// Kick off the animation
-animateGradient();
+btn.addEventListener('click', () => {
+  // reset display and kick off effect
+  element.textContent = '';
+  startDecoding('ACCESS GRANTED');
+});
+
 
 
 
