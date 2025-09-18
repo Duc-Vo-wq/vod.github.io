@@ -20,9 +20,9 @@
 
 .float-left-img {
   float: left;
-  width: 200px;       /* set your image width */
-  height: auto;       /* keeps aspect ratio */
-  margin: 0 16px 16px 0; /* right + bottom spacing */
+  width: 200px;       
+  height: auto;       
+  margin: 0 16px 16px 0; 
 }
 
 
