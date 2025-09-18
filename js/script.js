@@ -1,46 +1,56 @@
-// *** Fade transition on tab switch
-//Start
-const buttons = document.querySelectorAll('.tab-buttons button');
-const contents = document.querySelectorAll('.tab-content');
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons  = document.querySelectorAll('.tab-buttons button');
+  const contents = document.querySelectorAll('.tab-content');
 
-// helper: show only one pane with fade
-function showTab(id) {
+  // 1) Hide all panels immediately
   contents.forEach(panel => {
-    if (panel.id === id) {
-      panel.style.display = 'block';       // step 1: reveal container
-      // next line ensures transition can run
-      requestAnimationFrame(() => panel.classList.add('active'));
-    } else {
-      panel.classList.remove('active');    // step 2: fade out
-      panel.addEventListener(
-        'transitionend',
-        () => { panel.style.display = 'none'; },
-        { once: true }
-      );
-    }
+    panel.style.display = 'none';
+    panel.style.opacity = 0;
   });
-}
 
+  // 2) Determine which tab to show first
+  const lastTab = localStorage.getItem('lastTab') || buttons[0].dataset.tab;
+  const firstButton = document.querySelector(`.tab-buttons button[data-tab="${lastTab}"]`);
 
-// click handler
-buttons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    // buttons
-    buttons.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+  // 3) Show that panel instantly (no transition)
+  const firstPanel = document.getElementById(lastTab);
+  firstPanel.style.display = 'block';
+  firstPanel.style.opacity = 1;
+  firstButton.classList.add('active');
 
-    // content
-    showTab(btn.dataset.tab);
+  // 4) Now wire up future clicks with fade logic
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // deactivate old
+      buttons.forEach(b => b.classList.remove('active'));
 
-    // persist choice
-    localStorage.setItem('lastTab', btn.dataset.tab);
+      // fade out old panel(s)
+      contents.forEach(panel => {
+        if (panel.style.display === 'block' && panel !== document.getElementById(btn.dataset.tab)) {
+          panel.style.opacity = 0;
+          panel.addEventListener(
+            'transitionend',
+            () => { panel.style.display = 'none'; },
+            { once: true }
+          );
+        }
+      });
+
+      // activate clicked button
+      btn.classList.add('active');
+      localStorage.setItem('lastTab', btn.dataset.tab);
+
+      // fade in new panel
+      const toShow = document.getElementById(btn.dataset.tab);
+      toShow.style.display = 'block';
+      // use requestAnimationFrame so the browser picks up display:block first
+      requestAnimationFrame(() => {
+        toShow.style.opacity = 1;
+      });
+    });
   });
 });
 
-// initialize on load
-const last = localStorage.getItem('lastTab') || buttons[0].dataset.tab;
-document.querySelector(`.tab-buttons button[data-tab="${last}"]`).click();
-//End 
 
 // Dark/Light Mode
 //Start
