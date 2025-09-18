@@ -13,3 +13,10 @@ body {
   color: var(--fg);
   transition: background 0.3s, color 0.3s;
 }
+
+#js-glitch {
+  position: relative;
+  font-size: 4rem;
+  color: #fff;
+  font-family: sans-serif;
+}

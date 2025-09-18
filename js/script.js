@@ -25,3 +25,29 @@ themeBtn.addEventListener('click', () => {
   const nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
   root.setAttribute('data-theme', nextTheme);
 });
+
+
+const el = document.getElementById('js-glitch');
+const CHARS = ['#','%','&','@','?','<>'];
+
+function glitchOnce() {
+  const orig = el.textContent;
+  // random character replacements
+  let text = orig
+    .split('')
+    .map(ch => (Math.random() < 0.2 
+                 ? CHARS[Math.floor(Math.random() * CHARS.length)] 
+                 : ch))
+    .join('');
+  
+  el.textContent = text;
+  // restore after a short pause
+  setTimeout(() => el.textContent = orig, 100);
+}
+
+// run every 300–800ms for a sporadic effect
+setInterval(glitchOnce, 300 + Math.random() * 500);
+
+// optional: trigger on hover
+el.addEventListener('mouseenter', glitchOnce);
+
