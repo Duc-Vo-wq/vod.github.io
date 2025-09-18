@@ -41,18 +41,18 @@ body {
   transition: width 0.2s ease;
 }
 
-/* Particle Systems */
+/* Animated Gradients */
 html, body {
   margin: 0;
-  padding: 0;
-  overflow: hidden;
+  height: 100%;
 }
 
-#canvas {
-  display: block;
-  width: 200px;
-  height: 200px;
-  background: #000;
+#gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
