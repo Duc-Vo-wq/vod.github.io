@@ -1,68 +1,7 @@
-/* ─── Design Tokens ───────────────────────────────────────────────────────── */
-:root {
-  /* Color Palette */
-  --color-primary:   #007acc;
-  --color-secondary: #ff6f61;
-  --color-success:   #28a745;
-  --color-danger:    #dc3545;
-  --color-bg:        #ffffff;
-  --color-surface:   #f4f4f4;
-  --color-text:      #222222;
-  --color-muted:     #666666;
-  --bg: #fff;
-  --fg: #111;
-
-
-  /* Typography */
-  --font-base:       'Segoe UI', Arial, sans-serif;
-  --fs-sm:           0.875rem;
-  --fs-md:           1rem;
-  --fs-lg:           1.25rem;
-  --fs-xl:           2rem;
-
-  /* Spacing */
-  --space-xs:        0.25rem;
-  --space-sm:        0.5rem;
-  --space-md:        1rem;
-  --space-lg:        2rem;
-
-  /* Radii & Shadows */
-  --radius-sm:       4px;
-  --radius-md:       8px;
-  --shadow-sm:       0 1px 3px rgba(0,0,0,0.1);
-  --shadow-md:       0 4px 6px rgba(0,0,0,0.1);
-}
-
-/* Dark/Light Mode */
-:root[data-theme="dark"] {
-  --color-bg: #111;
-  --color-text: #eee;
-}
-
-body {
-  font-family: var(--font-base);
-  font-size: var(--fs-md);
-  line-height: 1.6;
-  background: var(--bg);
-  color: var(--fg);
-  transition: background 0.3s, color 0.3s;
-}
-
-/* ─── Reset & Base Styles ─────────────────────────────────────────────────── */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-
-
-
-/* ─── Layout Container & Header ──────────────────────────────────────────── */
 .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: var(--space-md);
+    width: 900px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .header {
@@ -70,110 +9,62 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--fs-xl);
-  font-weight: 600;
+  font-size: 24px;
+  font-weight: bold;
 }
 
-/* ─── Typography Utility ─────────────────────────────────────────────────── */
 .headline {
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-sm);
+  font-size: 24px;
+  font-weight: bold;
 }
 
-/* ─── Layout Utilities ───────────────────────────────────────────────────── */
-.d-flex        { display: flex; }
-.justify-between { justify-content: space-between; }
-.align-center  { align-items: center; }
-
-.mt-1 { margin-top: var(--space-sm); }
-.mt-2 { margin-top: var(--space-md); }
-.mb-1 { margin-bottom: var(--space-sm); }
-.mb-2 { margin-bottom: var(--space-md); }
-
-/* ─── Core Components ────────────────────────────────────────────────────── */
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: var(--space-sm) var(--space-md);
-  font-size: var(--fs-md);
-  border: none;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-.btn-primary {
-  background-color: var(--color-primary);
-  color: white;
-}
-.btn-primary:hover {
-  background-color: #006bb3;
-}
-.btn-secondary {
-  background-color: var(--color-secondary);
-  color: white;
-}
-
-/* Cards */
-.card {
-  background-color: var(--color-surface);
-  box-shadow: var(--shadow-sm);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-}
-
-/* Form Input */
-.input {
-  width: 100%;
-  padding: var(--space-sm);
-  font-size: var(--fs-md);
-  border: 1px solid var(--color-muted);
-  border-radius: var(--radius-sm);
-  transition: border-color 0.2s;
-}
-.input:focus {
-  border-color: var(--color-primary);
-  outline: none;
-}
-
-/* Badges */
-.badge {
-  display: inline-block;
-  padding: var(--space-xs) var(--space-sm);
-  font-size: var(--fs-sm);
-  border-radius: var(--radius-sm);
-  background-color: var(--color-secondary);
-  color: white;
-}
-
-/* ─── Specific Styles ────────────────────────────────────────────────────── */
-/* Floating image */
 .float-left-img {
   float: left;
-  width: 200px;
-  height: auto;
-  margin: 0 var(--space-md) var(--space-md) 0;
+  width: 200px;       
+  height: auto;       
+  margin: 0 16px 16px 0; 
 }
 
-/* Tabs */
+
 .tab-buttons {
   display: flex;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-md);
-}
-.tab-buttons button {
-  /* reuse button styles */
-}
-.tab-buttons .active {
-  background-color: var(--color-text);
-  color: var(--color-bg);
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
-/* Tab panels */
+.tab-buttons button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #eee;
+  border: none;
+  border-radius: 5px;
+}
+
+.tab-buttons button.active {
+  background-color: #333;
+  color: white;
+}
+
 .tab-content {
   display: none;
 }
+
 .tab-content.active {
   display: block;
+}
+
+/* Dark/Light Mode */
+:root {
+  --bg: #fff;
+  --fg: #111;
+}
+[data-theme="dark"] {
+  --bg: #111;
+  --fg: #eee;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  transition: background 0.3s, color 0.3s;
 }
