@@ -56,4 +56,12 @@ body {
   50% { border-color: orange; }
 }
 
+#startBtn {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
 

@@ -75,20 +75,31 @@ function startProgress() {
 startBtn.addEventListener('click', startProgress);
 
 // Typewriter effect
-const element = document.getElementById("typewriter");
-const text = "Am I the only person who likes bugfixing?";
-let index = 0;
-const speed = 100; // typing speed in milliseconds
+const element   = document.getElementById("typewriter");
+const button    = document.getElementById("startBtn");
+const fullText  = "Am I the only one who likes bugfixing?";
+let index, timer;
 
 function typeWriter() {
-  if (index < text.length) {
-    element.textContent += text.charAt(index);
+  if (index < fullText.length) {
+    element.textContent += fullText.charAt(index);
     index++;
-    setTimeout(typeWriter, speed);
+    timer = setTimeout(typeWriter, 100);
+  } else {
+    clearTimeout(timer);
   }
 }
 
-window.addEventListener("load", typeWriter);
+function startTyping() {
+  clearTimeout(timer);             // stop any in-progress typing
+  element.textContent = "";        // reset text container
+  index = 0;                       // reset character index
+  typeWriter();                    // kick off the effect
+}
+
+// wire up the button
+button.addEventListener("click", startTyping);
+
 
 
 
