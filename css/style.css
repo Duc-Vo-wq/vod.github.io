@@ -53,7 +53,7 @@
   display: block;
 }
 
-
+/* Mobile View */
 @media screen and (max-width: 600px) {
   .container {
     max-width: 100%;
