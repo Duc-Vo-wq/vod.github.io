@@ -46,7 +46,6 @@
 
 .tab-content.active {
   display: block;
-  opacity: 1;
 }
 
 /* Dark/Light Mode */
