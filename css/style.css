@@ -13,6 +13,11 @@
   font-weight: bold;
 }
 
+.headline {
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .float-left-img {
   float: left;
   width: 200px;       /* set your image width */
