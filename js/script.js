@@ -36,10 +36,7 @@ function glitchOnce() {
   // random character replacements
   let text = orig
     .split('')
-    .map(ch => (Math.random() < 0.2 
-                 ? CHARS[Math.floor(Math.random() * CHARS.length)] 
-                 : ch))
-    .join('');
+    .map(ch => (Math.random() < 0.2 ? CHARS[Math.floor(Math.random() * CHARS.length)]  : ch)).join('');
   
   el.textContent = text;
   // restore after a short pause
