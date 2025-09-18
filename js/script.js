@@ -26,7 +26,7 @@ themeBtn.addEventListener('click', () => {
   root.setAttribute('data-theme', nextTheme);
 });
 
-
+// Glitching Text
 const el = document.getElementById('js-glitch');
 const CHARS = ['#','%','&','@','?','<>'];
 
@@ -48,6 +48,6 @@ function glitchOnce() {
 // run every 300–800ms for a sporadic effect
 setInterval(glitchOnce, 300 + Math.random() * 500);
 
-// optional: trigger on hover
+// trigger on hover
 el.addEventListener('mouseenter', glitchOnce);
 
