@@ -9,6 +9,9 @@
   --color-surface:   #f4f4f4;
   --color-text:      #222222;
   --color-muted:     #666666;
+  --bg: #fff;
+  --fg: #111;
+
 
   /* Typography */
   --font-base:       'Segoe UI', Arial, sans-serif;
@@ -30,6 +33,21 @@
   --shadow-md:       0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* Dark/Light Mode */
+:root[data-theme="dark"] {
+  --color-bg: #111;
+  --color-text: #eee;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--fs-md);
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--fg);
+  transition: background 0.3s, color 0.3s;
+}
+
 /* ─── Reset & Base Styles ─────────────────────────────────────────────────── */
 * {
   margin: 0;
@@ -37,20 +55,8 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: var(--font-base);
-  font-size: var(--fs-md);
-  line-height: 1.6;
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  transition: background 0.3s, color 0.3s;
-}
 
-/* Dark/Light Mode */
-[data-theme="dark"] {
-  --color-bg: #111;
-  --color-text: #eee;
-}
+
 
 /* ─── Layout Container & Header ──────────────────────────────────────────── */
 .container {
