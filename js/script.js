@@ -74,13 +74,22 @@ function startProgress() {
 
 startBtn.addEventListener('click', startProgress);
 
-
+// Digital Clock
 function updateClock() {
   const now = new Date();
   document.getElementById("clock").innerText = now.toLocaleTimeString();
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+// Mouseover Text Change
+const hoverText = document.getElementById("hoverMe");
+hoverText.addEventListener("mouseover", () => {
+  hoverText.innerText = "You hovered!";
+});
+hoverText.addEventListener("mouseout", () => {
+  hoverText.innerText = "Hover over me!";
+});
 
 
 
