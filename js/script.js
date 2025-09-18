@@ -1,3 +1,4 @@
+// Tabs
 const buttons = document.querySelectorAll('.tab-buttons button');
 const contents = document.querySelectorAll('.tab-content');
 
@@ -51,7 +52,7 @@ setInterval(glitchOnce, 300 + Math.random() * 500);
 // trigger on hover
 el.addEventListener('mouseenter', glitchOnce);
 
-// Progress Bar
+// Progress Bar 
 const startBtn = document.getElementById('startBtn');
 const progressBar = document.getElementById('progressBar');
 
