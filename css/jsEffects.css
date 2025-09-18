@@ -41,3 +41,19 @@ body {
   transition: width 0.2s ease;
 }
 
+/*Typewriter effect*/
+#typewriter {
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  display: inline-block;
+  animation: blinkCaret .75s step-end infinite;
+}
+
+@keyframes blinkCaret {
+  from, to { border-color: transparent; }
+  50% { border-color: orange; }
+}
+
+

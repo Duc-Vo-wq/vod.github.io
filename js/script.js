@@ -74,4 +74,21 @@ function startProgress() {
 
 startBtn.addEventListener('click', startProgress);
 
+// Typewriter effect
+const element = document.getElementById("typewriter");
+const text = "Am I the only person who likes bugfixing?";
+let index = 0;
+const speed = 100; // typing speed in milliseconds
+
+function typeWriter() {
+  if (index < text.length) {
+    element.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeWriter, speed);
+  }
+}
+
+window.addEventListener("load", typeWriter);
+
+
 
