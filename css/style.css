@@ -64,8 +64,7 @@
     display: block;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    max-width: 100%;
+    width: auto;
     height: auto;
   }
 
@@ -74,7 +73,7 @@
   }
 
   .tab-buttons button {
-    width: 100%;
+    width: auto;
     font-size: 16px;
   }
 
