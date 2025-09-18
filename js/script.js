@@ -51,3 +51,27 @@ setInterval(glitchOnce, 300 + Math.random() * 500);
 // trigger on hover
 el.addEventListener('mouseenter', glitchOnce);
 
+// Progress Bar
+const startBtn = document.getElementById('startBtn');
+const progressBar = document.getElementById('progressBar');
+
+function startProgress() {
+  let width = 0;
+  progressBar.style.width = '0%';
+  progressBar.textContent = '0%';
+
+  const interval = setInterval(() => {
+    if (width >= 100) {
+      clearInterval(interval);
+      progressBar.textContent = 'Complete';
+    } else {
+      width++;
+      progressBar.style.width = width + '%';
+      progressBar.textContent = width + '%';
+    }
+  }, 100);
+}
+
+startBtn.addEventListener('click', startProgress);
+
+

@@ -21,3 +21,23 @@ body {
   color: #ff0909;
   font-family: sans-serif;
 }
+
+/* Progress Bar */
+#progressContainer {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#progressBar {
+  width: 0%;
+  height: 24px;
+  background-color: #4caf50;
+  text-align: center;
+  color: #fff;
+  line-height: 24px;
+  transition: width 0.2s ease;
+}
+
