@@ -44,15 +44,15 @@ body {
 /* Animated Gradients */
 html, body {
   margin: 0;
-  height: 100%;
+  height: 200px;
 }
 
 #gradient {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 200px;
+  height: 200px;
 }
 
 
